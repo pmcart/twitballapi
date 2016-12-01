@@ -50,7 +50,7 @@ router.route('/clubs')
         var clubParams = myArray.toString().replace(/,/g , " OR ");
         clubParams = clubParams.substr(0,clubParams.length-3);
         console.log(clubParams);
-        T.get('search/tweets', { q: clubParams + 'transfer rumours', count: 100, result_type: "recent", exclude:"retweets" }, function(err, data, response) {
+        T.get('search/tweets', { q: clubParams + 'transfer rumours', count: 100, exclude:"retweets" }, function(err, data, response) {
           //res.send(err);
         //res.json(response);
         console.log(response.url);
